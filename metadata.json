@@ -1,0 +1,10 @@
+{
+  "name": "Doorbly Partner - Service Provider App",
+  "description": "Official Android mobile app for Doorbly Service Partners to receive, navigate, execute, and collect payments for nearby home service requests in real time.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "entities": {
+    "Partner": {
+      "title": "Partner",
+      "description": "Registered Doorbly service partner profile",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique partner identifier"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Full name of partner"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "Mobile number"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        },
+        "serviceCategory": {
+          "type": "string",
+          "description": "Trade or skill category"
+        },
+        "serviceArea": {
+          "type": "string",
+          "description": "Service coverage area"
+        },
+        "district": {
+          "type": "string",
+          "description": "District or city"
+        },
+        "address": {
+          "type": "string",
+          "description": "Residential or workshop address"
+        },
+        "idType": {
+          "type": "string",
+          "description": "KYC Document type"
+        },
+        "idNumber": {
+          "type": "string",
+          "description": "KYC Document ID number"
+        },
+        "kycStatus": {
+          "type": "string",
+          "description": "Verification status: PENDING, VERIFIED, REJECTED"
+        },
+        "profilePhoto": {
+          "type": "string",
+          "description": "Profile picture URL"
+        },
+        "isOnline": {
+          "type": "boolean",
+          "description": "Partner online duty status"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Account registration timestamp"
+        }
+      },
+      "required": ["id", "fullName", "mobile", "email", "serviceCategory"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Customer service booking request",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique booking identifier"
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Customer full name"
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "Customer phone number"
+        },
+        "serviceName": {
+          "type": "string",
+          "description": "Title of service requested"
+        },
+        "serviceCategory": {
+          "type": "string",
+          "description": "Service category"
+        },
+        "status": {
+          "type": "string",
+          "description": "Booking lifecycle status"
+        },
+        "baseRate": {
+          "type": "number",
+          "description": "Service base charge"
+        },
+        "assignedPartnerId": {
+          "type": "string",
+          "description": "Assigned partner ID"
+        },
+        "dispatchTime": {
+          "type": "string",
+          "description": "Time job was dispatched"
+        }
+      },
+      "required": ["id", "customerName", "customerPhone", "serviceName", "status"]
+    },
+    "AppNotification": {
+      "title": "AppNotification",
+      "description": "In-app notifications for partners",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Notification ID"
+        },
+        "partnerId": {
+          "type": "string",
+          "description": "Target partner ID"
+        },
+        "title": {
+          "type": "string",
+          "description": "Notification heading"
+        },
+        "message": {
+          "type": "string",
+          "description": "Notification message body"
+        },
+        "type": {
+          "type": "string",
+          "description": "Notification category"
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Creation timestamp"
+        },
+        "read": {
+          "type": "boolean",
+          "description": "Read flag"
+        }
+      },
+      "required": ["id", "partnerId", "title", "message", "timestamp", "read"]
+    }
+  },
+  "firestore": {
+    "/partners/{partnerId}": {
+      "schema": {
+        "$ref": "#/entities/Partner"
+      },
+      "description": "Partner profile documents"
+    },
+    "/bookings/{bookingId}": {
+      "schema": {
+        "$ref": "#/entities/Booking"
+      },
+      "description": "Customer bookings and jobs"
+    },
+    "/notifications/{notificationId}": {
+      "schema": {
+        "$ref": "#/entities/AppNotification"
+      },
+      "description": "Partner notifications"
+    }
+  }
+}

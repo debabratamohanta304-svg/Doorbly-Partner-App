@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "479494747788",
+    "project_id": "doorbly-partner",
+    "storage_bucket": "doorbly-partner.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479494747788:android:6d54b82625d5b5cc9d6da9",
+        "android_client_info": {
+          "package_name": "com.doorbly.Partner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm6v920WaOrcU5ZsLOE5Nz3GvSRP0FEEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
